@@ -29,7 +29,7 @@
                 <div class="menu-item" *ngFor="let task of tasks, index as index">
                 <div *ngIf="task.title" style="margin-top: 5px; ">
                     <button class="btn btn-rounded btn-warning pull-left" style="margin-left: 20px;" (click)="deleteTask(task, index)">X</button>
-                    <a class="list-menu-item is-active" href="#" (click)="setTaskStatus(task)" style="margin-left: 10px;" [ngClass]="task.completed == true? 'strikeOut' : 'red' ">{{task.title}}, {{task.completed}}</a>
+                    <a class="list-menu-item is-active"  (click)="setTaskStatus(task, index)" style="margin-left: 10px; cursor: pointer;" [ngClass]="task.completed == true? 'strikeOut' : 'red' ">{{task.title}}</a>
                 </div>
                 </div>
             </div>

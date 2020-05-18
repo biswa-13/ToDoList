@@ -39,9 +39,12 @@ export class TaskListComponent implements OnInit {
       }
     );
   }
-  setTaskStatus(task:Task){
+  setTaskStatus(task:Task, index:number){
     this.taskService.markCompleted(this.listId, task).subscribe(
-      (res) =>{ console.log("Task Status Updated ...");}
+      (res) =>{ 
+        console.log("Task Status Updated ...",this.listId);
+        this.tasks[index]["completed"] = !this.tasks[index]["completed"];
+      }
       )
   }
 
