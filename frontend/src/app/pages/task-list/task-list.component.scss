@@ -1,0 +1,15 @@
+.red{
+    color: red;
+}
+
+.green{
+    color: green($color: #000000);
+}
+
+.active{
+    background-color: cyan;
+}
+
+.strikeOut{
+    color:green;text-decoration:line-through
+}

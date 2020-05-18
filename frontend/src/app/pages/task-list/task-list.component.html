@@ -1,0 +1,43 @@
+<!-- <p>task-list works!</p> -->
+<div class="row container">
+    <div class="Centered-content"
+        style="background-color: black;width: 300px;margin-left: 10px;margin-top: 10px;border-style: groove;">
+        <div>
+            <div class="sidebar" style="padding: 10px;">
+                <h1 class="title has-text-primary">Lists</h1>
+                <hr style="background-color: yellow;" />
+                <div class="menu-item" *ngFor="let list of lists, index as index">
+                    <div *ngIf="list.title" style="margin-top: 5px; ">
+                        <button class="btn btn-rounded btn-danger pull-left" (click)="deleteList(list, index)">X</button>
+                        
+                        <a  class="list-menu-item is-active" [routerLink]="['/lists', list._id]" routerLinkActive="active" style="margin-left: 10px;">{{list.title}}</a>
+
+                    </div>
+
+                </div>
+                <hr style="background-color: yellow;" />
+                <button class="btn btn-rounded btn-primary" routerLink="/lists/newList">Add List</button>
+            </div>
+        </div>
+
+    </div>
+    <div class="Centered-content" style="background-color: black;width: 500px; margin-top: 10px; ">
+        <div>
+            <div class="sidebar" style="padding: 10px;">
+                <h1 class="title has-text-primary">Tasks</h1>
+                <hr style="background-color: yellow;" />
+                <div class="menu-item" *ngFor="let task of tasks, index as index">
+                <div *ngIf="task.title" style="margin-top: 5px; ">
+                    <button class="btn btn-rounded btn-warning pull-left" style="margin-left: 20px;" (click)="deleteTask(task, index)">X</button>
+                    <a class="list-menu-item is-active" href="#" (click)="setTaskStatus(task)" style="margin-left: 10px;" [ngClass]="task.completed == true? 'strikeOut' : 'red' ">{{task.title}}, {{task.completed}}</a>
+                </div>
+                </div>
+            </div>
+            <hr style="background-color: yellow;" />
+            <button class="btn btn-rounded btn-primary" (click)="addTask()" style="margin-left: 10px;">Add Task</button>
+        </div>
+    </div>
+
+</div>
+<!-- 
+</div> -->
